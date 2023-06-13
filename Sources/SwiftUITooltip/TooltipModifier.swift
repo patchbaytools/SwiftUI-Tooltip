@@ -147,14 +147,14 @@ struct TooltipModifier<TooltipContent: View>: ViewModifier {
         case .default:
             let shape = ArrowShape()
                 .rotation(Angle(radians: angle))
-            if let borderColor {
+            if let borderColor = borderColor {
                 return AnyView(shape.stroke(borderColor))
             }
             return AnyView(shape)
         case .curveIn:
             let shape = CurveInArrowShape()
                 .rotation(Angle(radians: angle))
-            if let borderColor {
+            if let borderColor = borderColor {
                 return AnyView(shape.stroke(borderColor))
             }
             return AnyView(shape)
